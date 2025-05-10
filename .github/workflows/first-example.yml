@@ -3,23 +3,23 @@ name: my first workflow
 on: push
 
 jobs:
-    first_job:
-        runs-on: ubuntu-latest
-        steps:
-        - name: Checkout Repo
-          uses: actions/checkout@v4
+  first_job:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Repo
+        uses: actions/checkout@v4
 
-        - name: welcome message
-          run: |
-            echo "My first Github Action"
-            ls -ltra
-            cat README.md
+    - name: welcome message
+        run: |
+        echo "My first Github Action"
+        ls -ltra
+        cat README.md
 
-       - name: Generate ASCII artwork
-         run: cowsay -f dragon "RUN for cover,I'm a dragon"
+    - name: Generate ASCII artwork
+        run: cowsay -f dragon "RUN for cover,I'm a dragon"
 
-        # - name: List files
-        #   run: ls
+    # - name: List files
+    #   run: ls
 
-        # - name: Read file
-        #   run: cat README.md
+    # - name: Read file
+    #   run: cat README.md
