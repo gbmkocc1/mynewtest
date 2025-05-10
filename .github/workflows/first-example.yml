@@ -1,25 +1,27 @@
-name: my first workflow
+name: generate ascii artwork
 
-on: push
+on:
+  push
 
 jobs:
-    first_job:
+    ascii_job:
         runs-on: ubuntu-latest
         steps:
         - name: Checkout Repo
-          uses: actions/checkout@v4
+          uses: - uses: actions/checkout@v4
 
-        - name: welcome message
-          run: |
-            echo "My first Github Action"
-            ls -ltra
-            cat README.md
+        - name: install cowsay program
+          run: sudo apt-get install cowsay -y
 
-        - name: Generate ASCII artwork
-          run: cowsay -f dragon "RUN for cover,I'm a dragon"
+        - name: Execute cowsay CMD
+          run: cowsay -f dragon "RUN for cover,I'm a Dragon"
 
-        # - name: List files
-        #   run: ls
 
-        # - name: Read file
-        #   run: cat README.md
+         - name: Test file exists
+           run: grep -i "dragon" dragon.txt
+
+         - name: Read file
+           run: cat dragon.txt
+
+         - name: List Repo files
+           run: ls ltra
