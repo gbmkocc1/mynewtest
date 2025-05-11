@@ -13,7 +13,7 @@ jobs:
     - name: Execute cowsay CMD
       run: |
         cowsay -f dragon "RUN for cover, I'm a Dragon....RAWR" >> dragon.txt
-        chmod +w dragon.txt  # Ensure write permissions
+        chmod +rw dragon.txt  # Ensure read/write permissions
 
     - name: Upload Dragon Text File
       uses: actions/upload-pages-artifact@v3
