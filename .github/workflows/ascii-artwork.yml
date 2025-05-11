@@ -28,8 +28,8 @@ jobs:
       with:
         name: dragon-text-file
 
-    - name: Ensure Text File Exists Before Checking
-      run: ls -l dragon.txt && grep -i "dragon" dragon.txt
+    - name: Text File Exists Before Checking
+      run: grep -i "dragon" dragon.txt
 
   deploy_job_3:
     needs: [test_job_2]
@@ -40,8 +40,8 @@ jobs:
       with:
         name: dragon-text-file
 
-    - name: Verify Dragon Text File Exists
-      run: test -f dragon.txt && cat dragon.txt || echo "File not found!"
+    - name: Read File
+      run: cat dragon.txt
 
     - name: Deploy
       run: echo "Deploying ... .. ."
