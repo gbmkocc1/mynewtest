@@ -17,7 +17,7 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: dragon-text-file
-        path: dragon.txt
+        path: ./dragon.txt
 
   test_job_2:
     needs: build_job_1
