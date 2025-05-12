@@ -1,4 +1,4 @@
-name: Matric Configuration
+name: Matrix Configuration
 
 on:
   push:
