@@ -5,24 +5,15 @@ on:
   workflow_dispatch:
 
 jobs:
-  deploy:
-    strategy:
-      matrix:
-        os: [ubuntu-latest, ubuntu-24.04, windows-latest]
-        image: [hello-world, nginx]
-
-    # Skip Windows runners for Docker jobs
-    if: ${{ !startsWith(matrix.os, 'windows') }}
-
-    runs-on: ${{ matrix.os }}
-
-    steps:
-      - name: Docker Info
+    deploy:
+      strategy:
+        matrix:
+          os: [ubuntu-latest, ubuntu-24.04]
+          images: [hello-world, alpine]
+      runs-on: ${{ matrix.os }}
+      steps:
+      - name: Echo Docker Details
         run: docker info
 
-      - name: Pull and Run Docker Image
-        run: |
-          echo "Running on OS: ${{ matrix.os }}"
-          echo "Using image: ${{ matrix.image }}"
-          docker pull ${{ matrix.image }}
-          docker run --rm ${{ matrix.image }}
+      - name: Run Image on ${{ matrix.os }}
+        run: docker run ${{ matrix.images }}
