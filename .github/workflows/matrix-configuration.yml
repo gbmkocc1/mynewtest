@@ -5,9 +5,9 @@ on:
   workflow_dispatch:
 
 jobs:
-    deploy-on-ubuntu
+    deploy-on-ubuntu:
       runs-on: ubuntu-latest
-      stages:
+      steps:
       - name: Echo Docker Details
         run: docker info
 
