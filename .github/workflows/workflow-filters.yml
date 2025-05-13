@@ -13,8 +13,8 @@ pull_reques:
     - closed
   paths-ignore:     # workflow will on run when a pull request that includes a change on any file README.md
      - README.md
-       branches:
-       - main    # configures your workflow to only run on pull requests that target specific branches
+    branches:
+     - main    # configures your workflow to only run on pull requests that target specific branches
 
 job:
   hello:
